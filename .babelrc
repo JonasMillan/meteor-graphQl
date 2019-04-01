@@ -1,3 +1,7 @@
 {
-    "plugins": ["babel-plugin-inline-import"]
+    "plugins": [
+        "babel-plugin-inline-import",
+        "babel-plugin-graphql-import",
+        "import-graphql"
+    ]
 }
