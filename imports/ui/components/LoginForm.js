@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
 
-const LoginForm = () => {
+const LoginForm = ({ client }) => {
 
     const  login = () => {
         
         Meteor.loginWithPassword(email, password,
         error => {
+            if(!error){
+                client.resetStore()
+            }
             console.log(error)
         })
     }
@@ -14,7 +17,6 @@ const LoginForm = () => {
     const [ password, setPassword ] = useState('')
 
     return(
-        // <form onSubmit={}>
         <div>
             <input
                 type='email'
@@ -28,7 +30,6 @@ const LoginForm = () => {
             />   
             <button type='submit' onClick={() => login()}>Login User</button>
         </div>
-        // </form>
     )
 }
 export default LoginForm

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const RegisterForm = () => {
+const RegisterForm = ({ client }) => {
 
     const  registerUser = () => {
         
@@ -10,6 +10,9 @@ const RegisterForm = () => {
             password
         },
         error => {
+            if(!error){
+                client.resetStore()
+            }
             console.log(error)
         })
     }
