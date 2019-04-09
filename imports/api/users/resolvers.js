@@ -5,7 +5,7 @@ export default {
         }
     },
     User: {
-        email: ({ emails }) => emails[0].address,
-        username: ({ emails }) =>  emails[0].address.slice(0, emails[0].address.indexOf('@'))
+        email: ({ emails }) => emails ? emails[0].address : '',
+        username: ({ emails }) => emails ? emails[0].address.slice(0, emails[0].address.indexOf('@')) : ''
     }
 };

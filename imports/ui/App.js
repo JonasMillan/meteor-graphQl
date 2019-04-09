@@ -13,7 +13,7 @@ const App = ({ loading, resolutions, client, user }) => {
     if(loading) return null
     return( 
         <div>
-            { user._id ? 
+            { user._id !== null ? 
                 (
                     <div>
                         <h1>{`Wellcome ${user.username}`}</h1>
